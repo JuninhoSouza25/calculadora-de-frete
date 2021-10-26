@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon">  
+    <title>Comparativo de Frete</title>
+</head>
+<body>
+    <header>
+        <img src="./assets/img/logo.png" alt="Logo Mhedica" class="logo">
+        <h1 class="titulo">Comparativo de Frete</h1>
+    </header>
+    <main>
+        <div class="container-calc" id="container-cubagem">
+            <h2 class="titulo" id="titulo-cubagem">Calculo de Cubagem</h2>
+            <form class="cubagem">
+                <div class="div-cubagem">
+                    <div class="div">
+                        <label for="quantidade">Quantidade:</label>
+                        <input type="number" name="quantidade" id="quantidade">
+                    </div>
+                    <div class="div">
+                        <label for="altura">Altura:</label>
+                        <input type="number" name="altura" id="altura">
+                    </div>
+                    <div class="div">
+                        <label for="largura">Largura:</label>
+                        <input type="number" name="largura" id="largura">
+                    </div>
+                    <div class="div">
+                        <label for="comprimento">Comprimento:</label>
+                        <input type="number" name="comprimento" id="comprimento">
+                    </div>
+                </div>
+                <button class="cubagem-btn">Calcular</button>
+                <div class="container-valores">
+                    <h2 class="titulo-valor">Peso Cubado</h2>
+                    <p class="peso-cubado" id="peso-cubado"></p>
+                </div>
+            </form>
+        </div>
+        <div class="container-calc" id="container-pajucara">
+            <img src="./assets/img/logo-pajucara.png" alt="Logo Pajuçara" class="logo">
+            <div class="div">
+                <label for="destino">Selecione o destino: </label>
+                <select name="destino" id="destino-pj">
+                    <option value=""> - - </option>
+                    <option value="dest1-pj">BHZ</option>
+                    <option value="dest2-pj">BHZ - MG - INTERIOR 1</option>
+                    <option value="dest3-pj">BHZ - MG - INTERIOR 2</option>
+                </select>
+            </div>
+            <div class="div">
+                <label for="peso">Selecione o range do peso: </label>
+                <select name="peso" id="peso-pj">
+                    <option value=""> - - </option>
+                    <option value="preco0">Até 10kg</option>
+                    <option value="preco1">Entre 10,01kg e 20kg</option>
+                    <option value="preco2">Entre 20,01kg e 30kg</option>
+                    <option value="preco3">Entre 30,01kg e 50kg</option>
+                    <option value="preco4">Entre 50,01kg e 70kg</option>
+                    <option value="preco5">Entre 70,01kg e 100kg</option>
+                    <option value="preco6">Entre 100,01kg e 150kg</option>
+                    <option value="preco7">Entre 150,01kg e 200kg</option>
+                    <option value="preco8">Acima de 200kg</option>
+                </select>
+            </div>
+            <div class="adicionar-div">
+
+            </div>
+            <div class="div">
+                <label for="valor-nota">Digite o valor da nota: </label>
+                <input type="text" name="valor-nota" id="valor-nota-pj" placeholder="não utilizar virgula(,)">
+            </div>
+            <button onclick="calculoTotalPajucara()">Calcular</button>
+            <div class="container-valores">
+                <h2 class="titulo-valor">Valor total do frete</h2>
+                <p class="frete" id="total-pj"></p>
+            </div>
+        </div>
+        <div class="container-calc" id="container-braspress">
+            <img src="./assets/img/logo-braspress.png" alt="Logo Braspress" class="logo">
+            <div class="div">
+                <label for="destino">Selecione o destino: </label>
+                <select name="destino" id="destino-bp">
+                    <option value=""> - - </option>
+                    <option value="dest1-bp">BH E REGIÃO</option>
+                    <option value="dest2-bp">MG - INTERIOR 1</option>
+                    <option value="dest3-bp">MG - INTERIOR 2</option>
+                    <option value="dest4-bp">MG - INTERIOR 3</option>
+                </select>
+            </div>
+            <div class="div">
+                <label for="peso">Selecione o range do peso: </label>
+                <select name="peso" id="peso-bp">
+                    <option value=""> - - </option>
+                    <option value="preco0">Até 10kg</option>
+                    <option value="preco1">Entre 10,01kg e 20kg</option>
+                    <option value="preco2">Entre 20,01kg e 30kg</option>
+                    <option value="preco3">Entre 30,01kg e 35kg</option>
+                    <option value="preco4">Entre 35,01kg e 50kg</option>
+                    <option value="preco5">Entre 50,01kg e 70kg</option>
+                </select>
+            </div>
+            <div class="div">
+                <label for="valor-nota">Digite o valor da nota: </label>
+                <input type="text" name="valor-nota" id="valor-nota-bp" placeholder="não utilizar virgula(,)">
+            </div>
+            <button onclick="calculoTotalBraspress()">Calcular</button>
+            <div class="container-valores">
+                <h2 class="titulo-valor">Valor total do frete</h2>
+                <p class="frete" id="total-bp"></p>
+            </div>
+        </div>
+    </main>
+    <script src="pajucara.js"></script>
+    <script src="braspress.js"></script>
+    <script src="cubagem.js"></script>
+</body>
+</html>
