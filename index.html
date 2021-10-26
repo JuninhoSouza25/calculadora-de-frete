@@ -49,9 +49,9 @@
                 <label for="destino">Selecione o destino: </label>
                 <select name="destino" id="destino-pj">
                     <option value=""> - - </option>
-                    <option value="dest1-pj">BHZ</option>
-                    <option value="dest2-pj">BHZ - MG - INTERIOR 1</option>
-                    <option value="dest3-pj">BHZ - MG - INTERIOR 2</option>
+                    <option value="dest1">BHZ</option>
+                    <option value="dest2">BHZ - MG - INTERIOR 1</option>
+                    <option value="dest3">BHZ - MG - INTERIOR 2</option>
                 </select>
             </div>
             <div class="div">
@@ -76,7 +76,7 @@
                 <label for="valor-nota">Digite o valor da nota: </label>
                 <input type="text" name="valor-nota" id="valor-nota-pj" placeholder="não utilizar virgula(,)">
             </div>
-            <button onclick="calculoTotalPajucara()">Calcular</button>
+            <button id="botao-pajucara">Calcular</button>
             <div class="container-valores">
                 <h2 class="titulo-valor">Valor total do frete</h2>
                 <p class="frete" id="total-pj"></p>
@@ -117,8 +117,8 @@
             </div>
         </div>
     </main>
-    <script src="pajucara.js"></script>
     <script src="braspress.js"></script>
     <script src="cubagem.js"></script>
+    <script src="calculos.js"></script>
 </body>
 </html>
