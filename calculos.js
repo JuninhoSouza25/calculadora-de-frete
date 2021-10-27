@@ -14,11 +14,15 @@ botaoCalculoPj.addEventListener("click", function(){
     var listaPeso = ['preco0', 'preco1', 'preco2', 'preco3', 'preco4', 'preco5', 'preco6', 'preco7', 'preco8'];
     defineFretePeso(listaPeso, pesoPj, listaPreco, pesoOpcionalPj)
 
+    
+
     var valorNotaPj = document.querySelector('#valor-nota-pj')
     var totalPj = document.querySelector('#total-pj')
+    defineFreteValor(valorNotaPj)
+    //console.log(freteValor)
     calculoTotal(valorNotaPj, valorTaxa)
-    console.log(total)
-    console.log(fretePeso)
+    //console.log(total)
+    //console.log(fretePeso)
 
     totalPj.textContent = "R$ " + total.toFixed(2)
 })
@@ -57,6 +61,14 @@ function defineValores(listaDestino,destino, transportadora){
         }
     }
     return listaPreco, valorTaxa;
+}
+
+// Define o Frete Valor
+function defineFreteValor(valorNota, ){
+    var freteValor = (valorNota.value * 0.003) + (valorNota.value * 0.004)
+    if (freteValor < 6.14){
+        freteValor = 6.14
+    }
 }
 
 //Recebe o peso e define o valor referente ao peso
