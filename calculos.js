@@ -96,6 +96,7 @@ function defineValorPeso(listaPeso, peso, lista, pesoOpcional){
             }
         }
     }
+    return valorListaPreco;
 }
 
 //Faz o calculo final 
@@ -104,5 +105,5 @@ function calculoTotal(valorNota, taxa) {
     valorSeguro = valorNota.value * 0.0055
     total = taxa + valorListaPreco + valorSeguro
 
-    return total
+    return total;
 }
