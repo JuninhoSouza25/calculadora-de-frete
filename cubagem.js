@@ -33,3 +33,16 @@ function criaVolume(quantidade, altura, largura, comprimento){
 
     return volume;
 }
+
+function defineFretePeso(peso){
+
+    if (peso >= 200){
+        pesoAcima = peso - 200
+        fretePeso = 200
+    }else{
+        fretePeso = peso
+    }
+
+
+}
+
