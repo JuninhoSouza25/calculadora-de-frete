@@ -11,7 +11,7 @@ botaoCubagem.addEventListener("click", function(event){
     let volume1 = criaVolume(quantidadeRecebida.value, alturaRecebida.value, larguraRecebida.value, comprimentoRecebida.value);
 
     calculaVolume(volume1.quantidade, volume1.altura,volume1.largura, volume1.comprimento)
-    pesoCubado.textContent = totalPesoCubado + 'kg'
+    pesoCubado.textContent = totalPesoCubado.toFixed(2) + ' kg'
 
 })
 

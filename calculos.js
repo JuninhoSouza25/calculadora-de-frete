@@ -32,13 +32,14 @@ botaoCalculoPj.addEventListener("click", function(){
     
     defineFreteValor(valorNotaPj)
     //console.log(freteValor)
+
     calculoTotal(fretePeso, freteValor, valorTaxa, pedagio)
     console.log('Frete Peso: ' + fretePeso)
     console.log('Frete Valor: ' + freteValor)
     console.log('Valor Taxa: ' + valorTaxa)
     console.log('Pedagio: ' + pedagio)
 
-    totalPj.textContent = "R$ " + total.toFixed(2)
+    totalPj.textContent = "R$ " + freteTotal.toFixed(2)
 })
 
 //cria o campo de peso adicional caso acima de 200kg.
@@ -112,9 +113,17 @@ function definePedagio(peso){
 
 //Faz o calculo final 
 function calculoTotal(fretePeso, freteValor, taxa, pedagio) { 
-
+    var trt = document.querySelector("#trt")
+    console.log('trt: ' + trt.value)
     var tas = 4.93
     total = fretePeso + freteValor + taxa + pedagio + tas
+    
 
-    return total
+    if (trt.value == "sim"){
+        freteTotal = total + (total * 0.15)
+    }else{
+        freteTotal = total
+    }
+    console.log('valor trt: R$ ' + (total * 0.15))
+    return freteTotal
 }
