@@ -64,10 +64,10 @@ main {
 .container-calc {
     display: flex;
     flex-direction: column;
-    width: 40vw;
     justify-content: space-around;
     align-items: center;
-    margin: 1vh auto;
+    margin: 1vh;
+    padding: 1vh 5vw;
     background-color: #f1f6fa;
     border: 5px solid #6fa3ce;
     box-sizing: border-box;
