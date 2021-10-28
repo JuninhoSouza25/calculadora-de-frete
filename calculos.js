@@ -2,7 +2,7 @@
 var botaoCalculoPj = document.querySelector("#botao-pajucara")
 botaoCalculoPj.addEventListener("click", function(){
     let pajucara = criaTransportadora([[8.82, 11.77, 15.88, 28.02, 46.63, 72.92, 98.10, 128.99, 0.842],
-        [11.87, 15.85, 21.39, 33.32, 49.94, 74.95, 104.87, 141.65, 0.97], 
+        [11.87, 15.85, 21.39, 33.32, 49.94, 74.95, 104.87, 141.65, 0.979], 
         [14.97, 19.99, 26.98, 36.80, 55.17, 82.79, 115.81, 156.46, 1.085]], [17.46, 18.80, 18.80]);
     
     var destinoPj = document.querySelector('#destino-pj')
@@ -18,11 +18,25 @@ botaoCalculoPj.addEventListener("click", function(){
 
     var valorNotaPj = document.querySelector('#valor-nota-pj')
     var totalPj = document.querySelector('#total-pj')
+
+    var pesoPedagio 
+    if (pesoPj.value === "preco0" || pesoPj.value === "preco1" || pesoPj.value === "preco2" || pesoPj.value === "preco3" || pesoPj.value === "preco4" || pesoPj.value === "preco5"){
+        pesoPedagio = 1
+    }else if (pesoPj.value === "preco6" || pesoPj.value === "preco7"){
+        pesoPedagio = 199
+    }else{
+        pesoPedagio = parseInt(pesoOpcionalPj.value)
+    }
+
+    definePedagio(pesoPedagio)
+    
     defineFreteValor(valorNotaPj)
     //console.log(freteValor)
-    calculoTotal(valorNotaPj, valorTaxa)
-    //console.log(total)
-    //console.log(fretePeso)
+    calculoTotal(fretePeso, freteValor, valorTaxa, pedagio)
+    console.log('Frete Peso: ' + fretePeso)
+    console.log('Frete Valor: ' + freteValor)
+    console.log('Valor Taxa: ' + valorTaxa)
+    console.log('Pedagio: ' + pedagio)
 
     totalPj.textContent = "R$ " + total.toFixed(2)
 })
@@ -64,11 +78,13 @@ function defineValores(listaDestino,destino, transportadora){
 }
 
 // Define o Frete Valor
-function defineFreteValor(valorNota, ){
-    var freteValor = (valorNota.value * 0.003) + (valorNota.value * 0.004)
+function defineFreteValor(valorNota){
+    freteValor = (valorNota.value * 0.003) + (valorNota.value * 0.004)
     if (freteValor < 6.14){
         freteValor = 6.14
     }
+
+    return freteValor;
 }
 
 //Recebe o peso e define o valor referente ao peso
@@ -85,11 +101,20 @@ function defineFretePeso(listaPeso, peso, lista, pesoOpcional){
     }
 }
 
-//Faz o calculo final 
-function calculoTotal(valorNota, taxa) { 
+//Define o valor do pedagio em relação ao peso
+function definePedagio(peso){
 
-    valorSeguro = valorNota.value * 0.0055
-    total = taxa + fretePeso + valorSeguro
+    var fracaoPeso = parseInt(( peso / 100) + 1)
+    pedagio = fracaoPeso * 9.26
+
+    return pedagio;
+}
+
+//Faz o calculo final 
+function calculoTotal(fretePeso, freteValor, taxa, pedagio) { 
+
+    var tas = 4.93
+    total = fretePeso + freteValor + taxa + pedagio + tas
 
     return total
 }
