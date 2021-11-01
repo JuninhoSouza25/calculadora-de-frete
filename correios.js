@@ -20,6 +20,7 @@ botaoCalculoCorreios.addEventListener("click", function(){
     totalCorreios.textContent = "R$ " + fretePeso.toFixed(2)
 })
 
+//Define a lista de valores de acordo com o peso selecionado.
 var pesoCorreios = document.querySelector('#peso-correios')
 pesoCorreios.addEventListener("click", function(){ 
 
@@ -33,8 +34,6 @@ pesoCorreios.addEventListener("click", function(){
         adicionar.appendChild(input)
         
     }
-
-    
 })
 
 //Calcula o valor do frete
