@@ -5,7 +5,8 @@ botaoCalculoPj.addEventListener("click", function(){
         [8.82, 11.77, 15.88, 28.02, 46.63, 72.92, 98.10, 128.99, 0.842],
         [11.87, 15.85, 21.39, 33.32, 49.94, 74.95, 104.87, 141.65, 0.979], 
         [14.97, 19.99, 26.98, 36.80, 55.17, 82.79, 115.81, 156.46, 1.085]], 
-        [17.46, 18.80, 18.80]);
+        [17.46, 18.80, 18.80]
+    );
     
     var destinoPj = document.querySelector('#destino-pj')
     var listaDestino = ['dest1', 'dest2', 'dest3']
@@ -14,7 +15,7 @@ botaoCalculoPj.addEventListener("click", function(){
 
     var pesoOpcionalPj = document.querySelector('#peso-opcional-pj')
     var listaPeso = ['preco0', 'preco1', 'preco2', 'preco3', 'preco4', 'preco5', 'preco6', 'preco7', 'preco8'];
-    defineFretePeso(listaPeso, pesoPj, listaPreco, pesoOpcionalPj)
+    defineFretePesoPj(listaPeso, pesoPj, listaPreco, pesoOpcionalPj)
 
     
 
@@ -90,7 +91,7 @@ function defineFreteValor(valorNota){
 }
 
 //Recebe o peso e define o valor referente ao peso
-function defineFretePeso(listaPeso, peso, lista, pesoOpcional){ 
+function defineFretePesoPj(listaPeso, peso, lista, pesoOpcional){ 
     
     for (var i = 0; i <= listaPeso.length; i++){
         if (listaPeso[i] === peso.value){

@@ -44,6 +44,44 @@
                 </div>
             </form>
         </div>
+        <div class="container-calc" id="container-correios">
+            <img src="./assets/img/logo-correios.png" alt="Logo Correios" class="logo">
+            <div class="div">
+                <label for="destino">Selecione o destino: </label>
+                <select name="destino" id="destino-correios">
+                    <option value=""> - - </option>
+                    <option value="dest1">BHZ - MG - L3</option>
+                    <option value="dest2">BHZ - MG - E3</option>
+                </select>
+            </div>
+            <div class="div">
+                <label for="peso">Selecione o range do peso: </label>
+                <select name="peso" id="peso-correios">
+                    <option value=""> - - </option>
+                    <option value="preco0">Até 300gr</option>
+                    <option value="preco1">Entre 301gr e 500gr</option>
+                    <option value="preco2">Entre 501gr e 1kg</option>
+                    <option value="preco3">Entre 1.001kg e 2kg</option>
+                    <option value="preco4">Entre 2.001kg e 3kg</option>
+                    <option value="preco5">Entre 3.001kg e 4kg</option>
+                    <option value="preco6">Entre 4.001kg e 5kg</option>
+                    <option value="preco7">Entre 5.001kg e 6kg</option>
+                    <option value="preco8">Entre 6.001kg e 7kg</option>
+                    <option value="preco9">Entre 7.001kg e 8kg</option>
+                    <option value="preco10">Entre 8.001kg e 9kg</option>
+                    <option value="preco11">Entre 9.001kg e 10kg</option>
+                    <option value="preco12">Acima de 10kg</option>
+                </select>
+            </div>
+            <div class="adicionar-div-correios">
+
+            </div>
+            <button id="botao-correios">Calcular</button>
+            <div class="container-valores">
+                <h2 class="titulo-valor">Valor total do frete</h2>
+                <p class="frete" id="total-correios"></p>
+            </div>
+        </div>
         <div class="container-calc" id="container-pajucara">
             <img src="./assets/img/logo-pajucara.png" alt="Logo Pajuçara" class="logo">
             <div class="div">
@@ -128,6 +166,7 @@
         
     </main>
     <script src="cubagem.js"></script>
-    <script src="calculos.js"></script>
+    <script src="pajucara.js"></script>
+    <script src="correios.js"></script>
 </body>
 </html>
