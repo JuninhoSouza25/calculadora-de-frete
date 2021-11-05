@@ -1,5 +1,5 @@
 // Ação do botão Pajuçara
-var botaoCalculoPj = document.querySelector("#botao-pajucara")
+const botaoCalculoPj = document.querySelector("#botao-pajucara")
 botaoCalculoPj.addEventListener("click", function(){
     let pajucara = criaTransportadora([
         [8.82, 11.77, 15.88, 28.02, 46.63, 72.92, 98.10, 128.99, 0.842],
@@ -8,21 +8,21 @@ botaoCalculoPj.addEventListener("click", function(){
         [17.46, 18.80, 18.80]
     );
     
-    var destinoPj = document.querySelector('#destino-pj')
-    var listaDestino = ['dest1', 'dest2', 'dest3']
+    let destinoPj = document.querySelector('#destino-pj')
+    let listaDestino = ['dest1', 'dest2', 'dest3']
     defineValores(listaDestino, destinoPj, pajucara)
     
 
-    var pesoOpcionalPj = document.querySelector('#peso-opcional-pj')
-    var listaPeso = ['preco0', 'preco1', 'preco2', 'preco3', 'preco4', 'preco5', 'preco6', 'preco7', 'preco8'];
+    let pesoOpcionalPj = document.querySelector('#peso-opcional-pj')
+    const listaPeso = ['preco0', 'preco1', 'preco2', 'preco3', 'preco4', 'preco5', 'preco6', 'preco7', 'preco8'];
     defineFretePesoPj(listaPeso, pesoPj, listaPreco, pesoOpcionalPj)
 
     
 
-    var valorNotaPj = document.querySelector('#valor-nota-pj')
-    var totalPj = document.querySelector('#total-pj')
+    let valorNotaPj = document.querySelector('#valor-nota-pj')
+    let totalPj = document.querySelector('#total-pj')
 
-    var pesoPedagio 
+    let pesoPedagio 
     if (pesoPj.value === "preco0" || pesoPj.value === "preco1" || pesoPj.value === "preco2" || pesoPj.value === "preco3" || pesoPj.value === "preco4" || pesoPj.value === "preco5"){
         pesoPedagio = 1
     }else if (pesoPj.value === "preco6" || pesoPj.value === "preco7"){
@@ -45,11 +45,11 @@ botaoCalculoPj.addEventListener("click", function(){
 })
 
 //cria o campo de peso adicional caso acima de 200kg.
-var pesoPj = document.querySelector('#peso-pj')
+let pesoPj = document.querySelector('#peso-pj')
 pesoPj.addEventListener("click", function(){ 
 
-    var adicionar = document.querySelector(".adicionar-div")
-    var input = document.createElement("input");
+    let adicionar = document.querySelector(".adicionar-div")
+    let input = document.createElement("input");
     input.type = "text"
     input.name = "peso-opcional"
     input.id = "peso-opcional-pj"
@@ -71,7 +71,7 @@ function criaTransportadora(lista, taxa){
 
 //Define qual lista de preço e valor da taxa será usada de acordo com a região
 function defineValores(listaDestino,destino, transportadora){  
-    for (var i = 0; i <= listaDestino.length; i++){
+    for (let i = 0; i <= listaDestino.length; i++){
         if (listaDestino[i] === destino.value){
             listaPreco = transportadora.lista[i];
             valorTaxa = transportadora.taxa[i];
@@ -93,11 +93,11 @@ function defineFreteValor(valorNota){
 //Recebe o peso e define o valor referente ao peso
 function defineFretePesoPj(listaPeso, peso, lista, pesoOpcional){ 
     
-    for (var i = 0; i <= listaPeso.length; i++){
+    for (let i = 0; i <= listaPeso.length; i++){
         if (listaPeso[i] === peso.value){
             fretePeso = lista[i]
             if (listaPeso[8] == peso.value){
-                var pesoAcima = pesoOpcional.value - 200
+                let pesoAcima = pesoOpcional.value - 200
                 fretePeso = lista[7] + ( pesoAcima * lista[8])
             }
         }
@@ -107,7 +107,7 @@ function defineFretePesoPj(listaPeso, peso, lista, pesoOpcional){
 //Define o valor do pedagio em relação ao peso
 function definePedagio(peso){
 
-    var fracaoPeso = parseInt(( peso / 100) + 1)
+    let fracaoPeso = parseInt(( peso / 100) + 1)
     pedagio = fracaoPeso * 9.26
 
     return pedagio;
@@ -115,7 +115,7 @@ function definePedagio(peso){
 
 //Faz o calculo final 
 function calculoTotal(fretePeso, freteValor, taxa, pedagio) { 
-    var trt = document.querySelector("#trt")
+    let trt = document.querySelector("#trt")
     console.log('trt: ' + trt.value)
     var tas = 4.93
     total = fretePeso + freteValor + taxa + pedagio + tas

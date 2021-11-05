@@ -1,12 +1,12 @@
-var botaoCubagem = document.querySelector(".cubagem-btn")
+const botaoCubagem = document.querySelector(".cubagem-btn")
 botaoCubagem.addEventListener("click", function(event){
     event.preventDefault();
 
-    var quantidadeRecebida = document.querySelector("#quantidade")
-    var alturaRecebida = document.querySelector("#altura")
-    var larguraRecebida = document.querySelector("#largura")
-    var comprimentoRecebida = document.querySelector("#comprimento")
-    var pesoCubado = document.querySelector("#peso-cubado")
+    let quantidadeRecebida = document.querySelector("#quantidade")
+    let alturaRecebida = document.querySelector("#altura")
+    let larguraRecebida = document.querySelector("#largura")
+    let comprimentoRecebida = document.querySelector("#comprimento")
+    let pesoCubado = document.querySelector("#peso-cubado")
 
     let volume1 = criaVolume(quantidadeRecebida.value, alturaRecebida.value, larguraRecebida.value, comprimentoRecebida.value);
 
@@ -16,7 +16,7 @@ botaoCubagem.addEventListener("click", function(event){
 })
 
 function calculaVolume(quantidade, altura, largura, comprimento) {
-    var fator = 300
+    let fator = 300
     volumeCubagem = quantidade * (altura * largura * comprimento)
     totalPesoCubado = volumeCubagem * fator
 
