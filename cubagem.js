@@ -20,12 +20,11 @@ function calculaVolume(quantidade, altura, largura, comprimento) {
     let correiosCheck = document.querySelector("#correios-check")
     console.log(correiosCheck.value)
     let fator = 300
-    let ar = 6.35
     volumeCubagem = quantidade * (altura * largura * comprimento)
     totalPesoCubado = volumeCubagem * fator
     console.log(totalPesoCubado)
     if(correiosCheck.value === "sim"){
-        totalPesoCubado = totalPesoCubado / 6000
+        totalPesoCubado = volumeCubagem / 6000
         console.log(totalPesoCubado)
     }
 }
