@@ -199,3 +199,12 @@ button:hover {
 .box-image-p {
     width: 60px;
 }
+
+@media screen and (max-width: 768px) {
+    .container-box-items {
+        flex-direction: column;
+    }
+    #container-box, .container-calc {
+        width: 100%;
+    }
+}
