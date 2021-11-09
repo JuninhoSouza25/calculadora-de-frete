@@ -17,8 +17,6 @@ botaoCalculoPj.addEventListener("click", function(){
     const listaPeso = ['preco0', 'preco1', 'preco2', 'preco3', 'preco4', 'preco5', 'preco6', 'preco7', 'preco8'];
     defineFretePesoPj(listaPeso, pesoPj, listaPreco, pesoOpcionalPj)
 
-    let cliente = document.querySelector("#cliente")
-
     let valorNotaPj = document.querySelector('#valor-nota-pj')
     let totalPj = document.querySelector('#total-pj')
 
@@ -41,7 +39,7 @@ botaoCalculoPj.addEventListener("click", function(){
     console.log('Valor Taxa: ' + valorTaxa)
     console.log('Pedagio: ' + pedagio)
     console.log('Frete total: ' + freteTotal)
-    console.log('cliente: ' + cliente.value)
+
 
     
 
@@ -132,8 +130,5 @@ function calculoTotal(fretePeso, freteValor, taxa, pedagio, cliente) {
         freteTotal = total
     }
     console.log('valor trt: R$ ' + (total * 0.15))
-    if(cliente.value === 'cliente'){
-        freteTotal = freteTotal * 1.1
-    }
     return freteTotal
 }

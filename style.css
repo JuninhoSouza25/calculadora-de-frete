@@ -139,3 +139,63 @@ button:hover {
     font-weight: bold;
     font-size: 1.5em;
 }
+
+.container-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    padding: 10px;
+}
+
+.container-box-items {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.informacoes-titulo {
+    color: #969696;
+}
+
+#container-box {
+    width: 65vw;
+    flex-direction: column;
+    border: 5px solid #969696;
+    background-color: #ffffff;
+}
+
+.box-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.box-titulo {
+    color: #969696;
+}
+
+.box-descricao {
+    color: #969696;
+}
+
+.box-image-g {
+    width: 100px;
+}
+
+.box-image-m {
+    width: 85px;
+}
+
+.box-image-i {
+    width: 70px;
+}
+
+.box-image-p {
+    width: 60px;
+}
