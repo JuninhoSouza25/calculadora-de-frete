@@ -7,6 +7,7 @@ botaoCubagem.addEventListener("click", function(event){
     let larguraRecebida = document.querySelector("#largura")
     let comprimentoRecebida = document.querySelector("#comprimento")
     let pesoCubado = document.querySelector("#peso-cubado")
+    
 
     let volume1 = criaVolume(quantidadeRecebida.value, alturaRecebida.value, larguraRecebida.value, comprimentoRecebida.value);
 
@@ -16,11 +17,16 @@ botaoCubagem.addEventListener("click", function(event){
 })
 
 function calculaVolume(quantidade, altura, largura, comprimento) {
+    let correiosCheck = document.querySelector("#correios-check")
+    console.log(correiosCheck.value)
     let fator = 300
     volumeCubagem = quantidade * (altura * largura * comprimento)
     totalPesoCubado = volumeCubagem * fator
-
-    return totalPesoCubado
+    console.log(totalPesoCubado)
+    if(correiosCheck.value === "sim"){
+        totalPesoCubado = totalPesoCubado / 6000
+        console.log(totalPesoCubado)
+    }
 }
 
 function criaVolume(quantidade, altura, largura, comprimento){

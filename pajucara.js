@@ -33,7 +33,7 @@ botaoCalculoPj.addEventListener("click", function(){
     
     defineFreteValor(valorNotaPj)
 
-    calculoTotal(fretePeso, freteValor, valorTaxa, pedagio, cliente)
+    calculoTotal(fretePeso, freteValor, valorTaxa, pedagio)
     console.log('Frete Peso: ' + fretePeso)
     console.log('Frete Valor: ' + freteValor)
     console.log('Valor Taxa: ' + valorTaxa)
@@ -117,7 +117,7 @@ function definePedagio(peso){
 }
 
 //Faz o calculo final 
-function calculoTotal(fretePeso, freteValor, taxa, pedagio, cliente) { 
+function calculoTotal(fretePeso, freteValor, taxa, pedagio) { 
     let trt = document.querySelector("#trt")
     console.log('trt: ' + trt.value)
     var tas = 4.93
