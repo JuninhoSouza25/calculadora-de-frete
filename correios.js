@@ -12,9 +12,10 @@ botaoCalculoCorreios.addEventListener("click", function(){
     defineValores(listaDestinoCorreios, destinoCorreios, correios)
     
     let clienteCorreios = document.querySelector("#cliente-correios")
+    let ar = document.querySelector("#ar")
     let pesoOpcionaCorreios = document.querySelector('#peso-opcional-correios')
     const listaPesoCorreios = ['preco0', 'preco1', 'preco2', 'preco3', 'preco4', 'preco5', 'preco6', 'preco7', 'preco8', 'preco0', 'preco10', 'preco11', 'preco12'];
-    calculoFreteCorreios(listaPesoCorreios, pesoCorreios, listaPreco, pesoOpcionaCorreios, clienteCorreios)
+    calculoFreteCorreios(listaPesoCorreios, pesoCorreios, listaPreco, pesoOpcionaCorreios, clienteCorreios, ar)
     console.log(fretePeso)
 
     let totalCorreios = document.querySelector("#total-correios")
@@ -38,8 +39,8 @@ pesoCorreios.addEventListener("click", function(){
 })
 
 //Calcula o valor do frete
-function calculoFreteCorreios(listaPeso, peso, lista, pesoOpcional, cliente){ 
-    
+function calculoFreteCorreios(listaPeso, peso, lista, pesoOpcional, cliente, ar){ 
+    arValor = 6.35;
     for (let i = 0; i <= listaPeso.length; i++){
         if (listaPeso[i] === peso.value){
             fretePeso = lista[i]
@@ -51,5 +52,9 @@ function calculoFreteCorreios(listaPeso, peso, lista, pesoOpcional, cliente){
     }
     if(cliente.value === 'cliente'){
         fretePeso = fretePeso * 1.1
+    }
+
+    if(ar.value === "sim") {
+        fretePeso = fretePeso + arValor
     }
 }
