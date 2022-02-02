@@ -53,11 +53,6 @@
         <div class="container-calc" id="container-correios">
             <img src="./assets/img/logo-correios.png" alt="Logo Correios" class="logo">
             <div class="div">
-                <label for="cliente">Frete:</label>
-                <select name="cliente" id="cliente-correios">
-                    <option value="mhedica">Mhedica</option>
-                    <option value="cliente">Cliente</option>
-                </select>
                 <label for="destino">Selecione o destino: </label>
                 <select name="destino" id="destino-correios">
                     <option value=""> - - </option>
@@ -148,17 +143,51 @@
                 <p class="frete" id="total-pj"></p>
             </div>
         </div>
-        <div class="container-calc" id="container-box">
+        <div class="container-box" id="container-info">
             <div class="container-informacoes">
-                <h2 class="informacoes-titulo">Informações Relevantes</h2>
+                <h2 class="informacoes-titulo">Como usar</h2>
+            </div>
+            <div class="lista-info">
+                <h3>Cubagem:</h3>
+                <span>
+                    <p>
+                     A cubagem da carga pode ser definida como a relação entre o peso de um produto e o espaço que ele ocupará dentro do veículo.</br>Essa relação é obtida por meio de um cálculo matemático utilizando o fator de cubagem. O calculo é feito da seguinte forma:</br> quantidade x (altura x largura x comprimento) x fator de cubagem. </br>O fator de cubagem já está imbutido no calculo, não precisando assim preocupar com ele.
+                    </p>
+                    <ul>
+                     <li>1º - Definir se o produto vai ser entregue pelo Correios ou não.</li>
+                     <li>2º - Informar os campos de acordo com a informação do envio.</li>
+                     <li>3º - Calcular</li>
+                    </ul>
+                </span>
+                <h3>Correios: </h3>
+                <span>
+                    <ul>
+                        <li>1º - Escolher a tabela de acordo com o destino.</br> (Consultar a região de envio de acordo com a tabela externa)</li>
+                        <li>2º - Selecionar o peso. </br>(Sempre o maior peso, se o peso cubado for maior, colocar ele, se o peso real for maior colocar ele. </br>Lembrando que para Correios, você deve ter selecionado a opção sim no calculo da cubagem.)</br>Caso o peso seja maior que 10kg, um campo adicional irá aparecer para que seja colocado manualmente.</li>
+                        <li>3º - O AR tem um valor de R$6,35, portanto, se for necessário que tenha, selecionar SIM no campo AR que esse </br>valor será adicionado no calculo final. </li>
+                        <li>4º - Calcular</li>
+                    </ul>
+                </span>
+                <h3>Pajuçara: </h3>
+                <span>
+                    <ul>
+                        <li>1º - Escolher a tabela de acordo com o destino.</br> (Consultar a região de envio de acordo com a tabela externa)</li>
+                        <li>2º - Selecionar o peso. </br>(Sempre o maior peso, se o peso cubado for maior, colocar ele, se o peso real for maior colocar ele.)</br>Caso o peso seja maior que 200kg, um campo adicional irá aparecer para que seja colocado manualmente.</li>
+                        <li>3º - Informar se tem TRT. </br> TRT é uma taxa de restrição de trânsito que a transportadora cobra caso o destino tenha grande fluxo de trânsito, </br>geralmente grandes cidades e capitais. (Consultar tabela)</li>
+                        <li>4º - Calcular</li>
+                    </ul>
+                </span>
+            </div>
+            <div class="container-informacoes">
+                <h2 class="informacoes-titulo">Tamanhos</h2>
             </div>
             <div class="container-box-items">
                 <div class="container-box">
                     <h2 class="box-titulo">Caixa grande</h2>
-                  
+                    
                         <img src="assets/img/box.png" class="box-image-g" alt="Caixa">
                         <p class="box-descricao">45cm x 55cm x 60cm</p>
-                   
+                    
                 </div>
                 <div class="container-box">
                     <h2 class="box-titulo">Caixa média</h2>
@@ -169,10 +198,10 @@
                 </div>
                 <div class="container-box">
                     <h2 class="box-titulo">Caixa intermediária</h2>
-                   
+                    
                         <img src="assets/img/box.png" class="box-image-i" alt="Caixa">
                         <p class="box-descricao">35cm x 30cm x 35cm</p>
-                   
+                    
                 </div>
                 <div class="container-box">
                     <h2 class="box-titulo">Caixa pequena</h2>

@@ -50,9 +50,6 @@ function calculoFreteCorreios(listaPeso, peso, lista, pesoOpcional, cliente, ar)
             }
         }
     }
-    if(cliente.value === 'cliente'){
-        fretePeso = fretePeso * 1.1
-    }
 
     if(ar.value === "sim") {
         fretePeso = fretePeso + arValor

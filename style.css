@@ -154,6 +154,7 @@ button:hover {
     justify-content: space-between;
     height: 100%;
     padding: 10px;
+    border-radius: 25px;
 }
 
 .container-box-items {
@@ -168,11 +169,16 @@ button:hover {
     color: #969696;
 }
 
-#container-box {
-    width: 65vw;
+#container-info {
+    width: 64vw;
     flex-direction: column;
     border: 5px solid #969696;
     background-color: #ffffff;
+    color: #969696;
+}
+
+li{
+    list-style-type: none;
 }
 
 .box-items {
@@ -211,7 +217,8 @@ button:hover {
     .container-box-items {
         flex-direction: column;
     }
-    #container-box, .container-calc {
+    #container-box, .container-calc, #container-info {
         width: 100%;
+        margin: 10px auto;
     }
 }
